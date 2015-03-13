@@ -1,0 +1,303 @@
+#!/bin/sh
+############################################################################
+#
+#        \file  m77test
+#
+#      \author  thomas schnuerer
+#        $Date: 2008/09/04 10:44:47 $
+#    $Revision: 1.5 $
+#
+#    \brief
+#
+#     bash script for automatically setting and testing various
+#     properties of the M45N/M69N/M77 M-Modules
+#
+#     The Script assumes the driver for M45N was loaded with
+#      modprobe men_lx_m77 devName=m45_1 brdName=d201_1 slotNo=1
+#     and the driver for M69N and M77 was loaded with
+#      modprobe men_lx_m77 devName=m69_1,m77_1 brdName=d201_1,d201_1 slotNo=0,2
+#
+#     To be used with Connected Scope to Channel0 of each M45N/M69N
+#
+#
+#-------------------------------[ History ]---------------------------------
+#
+# $Log: m77test,v $
+# Revision 1.5  2008/09/04 10:44:47  ts
+# new Revision 1.3 of driver, corrected VME access problem
+#
+# Revision 1.4  2007/08/27 10:16:51  ts
+# added revert_uart_settings()
+#
+# Revision 1.3  2007/08/06 19:35:35  ts
+# Enhanced, code split into functions
+# Possible to pass Module to test driver on as Parameter
+# Test runs automatic or Interactive
+#
+# Revision 1.2  2007/08/03 16:20:43  ts
+# Comments added
+#
+# Revision 1.1  2007/08/01 16:48:41  ts
+# Initial Revision
+#
+#
+#---------------------------------------------------------------------------
+# (c) Copyright 2007 by MEN mikro elektronik GmbH, Nuremberg, Germany
+############################################################################
+
+
+# "User servicable Parts"
+UARTDEVICE=/dev/ttyD0
+GO_ON_TEXT="Check Signal on Scope then ENTER to continue"
+
+# The Baudrate for all other Tests
+TESTBAUDRATE=9600
+
+TESTSTRING="UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"
+#use 0x70 0x55 0x70 = 'p' 'U' 'p' 
+PARSTRING="pUp" 
+
+if [ "$2" = "I" ] ; then 
+	INTERACTIVE_MODE="Y"
+else 
+	INTERACTIVE_MODE="N"
+fi
+
+
+usage () {
+	echo "usage: m77test <Module> [I] Tests Driver settings of all Parameters"
+	echo "Test Script to be used together with men_lx_m77 driver "
+	echo ""
+	echo "Valid Arguments"
+	echo "  m77test M45  Run Tests on M45N: "
+	echo "            Comm Parameters, Tristates, Handshakes "
+	echo "  m77test M69  Run Tests on M69N: "
+	echo "            Comm Parameters, Handshakes "
+	echo "  m77test M77  Run Tests on M77: "
+	echo "            Comm Parameters, Phy Modes, Handshakes "
+	echo "  if 2nd Parameter 'I' is given, each Test stops until ENTER is hit"
+	echo "  (Interactive Mode, e.g. to take Measurements with Scope)"
+}
+
+get_user_input ()  {
+# might run in interactive ("m77test I" ) or automatic mode
+if [ $INTERACTIVE_MODE = "Y" ]
+    then
+	echo $GO_ON_TEXT
+	read dummy
+else 
+	sleep 1
+fi
+}
+
+
+revert_uart_settings () {
+
+	stty -F $UARTDEVICE 9600 cs8 -crtscts -ixon -ixoff -ixany -parenb -parodd -cstopb
+
+}
+
+test_basic_settings () {
+	echo "Setting Standard Baudrates"
+	get_user_input
+
+	##################################
+	# check standard baudrates
+    #
+
+  # arrest the usual Suspects...
+	for BAUD in 300 1200 2400 4800 9600 19200 38400 57600 115200
+	  do
+	  echo Now setting $UARTDEVICE to $BAUD Baud
+	  stty $BAUD -raw echo < $UARTDEVICE
+	  echo  $TESTSTRING > $UARTDEVICE
+	  get_user_input
+	done
+	revert_uart_settings
+
+	##################################
+	# check data bits setting
+    #
+	echo "Set 5..8 Data bits at $TESTBAUDRATE Baud"
+	stty $TESTBAUDRATE -raw echo < $UARTDEVICE
+	get_user_input
+	for DBITS in 5 6 7 8
+	  do
+	  echo Now setting $TESTBAUDRATE Baud, $DBITS Databits
+	  stty -F $UARTDEVICE cs$DBITS
+	  echo "O O O O O O O O O" > $UARTDEVICE
+	  get_user_input
+	done
+
+	##################################
+	# check parity setting
+    #
+
+	echo "3. Test Parity bit at $TESTBAUDRATE 8 Databits 1 Stopbit "
+	stty $BAUD -raw echo -parity -evenp -oddp cs8 -cstopb < $UARTDEVICE
+	get_user_input
+	echo "Now setting Parity NONE"
+	echo $PARSTRING > $UARTDEVICE
+	get_user_input
+	echo "Now setting Parity EVEN"
+	stty -F $UARTDEVICE evenp -oddp
+	echo $PARSTRING > $UARTDEVICE
+	get_user_input
+	echo "Now setting Parity ODD"
+	stty -F $UARTDEVICE -evenp oddp
+	echo $PARSTRING > $UARTDEVICE
+	get_user_input
+	revert_uart_settings
+
+	##################################
+	# check stopbit setting
+    #
+
+	echo "4. Test Stopbit setting at $TESTBAUDRATE 8 Databits, no parity"
+	echo "Now setting 2 Stopbits "
+	stty -F $UARTDEVICE cstopb
+	get_user_input
+	echo $PARSTRING > $UARTDEVICE
+	get_user_input
+
+	echo "Now setting 1 Stopbit"
+	stty -F $UARTDEVICE -cstopb
+	get_user_input
+	echo $PARSTRING > $UARTDEVICE
+	get_user_input
+
+}
+
+test_m45_tristate () {
+	echo "M45N specific test: Tristate Activation"
+	for TRIST in 1 0
+	  do
+	  echo " Now set Tristate Bit of $UARTDEVICE to $TRIST"
+	  m77_ioctl -d $UARTDEVICE -t $TRIST
+	  get_user_input
+	done
+
+	# revert to operational state 
+	m77_ioctl -d $UARTDEVICE -t 0
+}
+
+test_m77_high_baudrates () {
+
+	for BAUD in 576000 1152000
+	  do
+	  echo Now setting $UARTDEVICE to $BAUD Baud
+	  stty $BAUD -raw echo < $UARTDEVICE
+	  echo  $TESTSTRING > $UARTDEVICE
+	  get_user_input
+	done
+	echo " test_m77_high_baudrates has finished. "
+	revert_uart_settings
+}
+
+
+test_m77_hw_handshakes () {
+	
+	echo "The Test verifies HW Handshaking (CTS/RTS) with an M45N. Connect "
+	echo "SER0 of 05M045N-00(Art.6080-0075) with the CTS/RTS Jumper Adapter. "
+	echo "Do not connect RTS with CTS. "
+	echo
+	get_user_input
+	
+	echo "1. Switch on RTS/CTS Handshake."
+	stty -F $UARTDEVICE crtscts
+	echo "Now writing to $UARTDEVICE, must Block until CTS & RTS is connected."
+	echo  $TESTSTRING > $UARTDEVICE
+	echo " writing to $UARTDEVICE finished. "
+
+	echo "2. Switch off RTS/CTS Handshake."
+	stty -F $UARTDEVICE -crtscts
+
+	echo "Now writing to $UARTDEVICE, leave RTS unconnected to CTS. "
+	echo "writing to $UARTDEVICE must finish immediately".
+	get_user_input
+
+	echo  $TESTSTRING > $UARTDEVICE
+	echo " writing to $UARTDEVICE finished. "
+	get_user_input
+
+	echo " test_m77_hw_handshakes has finished. "
+	revert_uart_settings
+}
+
+test_m77_sw_handshakes () {
+	echo "The Test verifies SW Handshaking (CTRL+S / CTRL+Q). Connect "
+	echo "$UARTDEVICE to Windows PC with HTERM running, then press ENTER"
+	get_user_input
+
+	stty -F /dev/ttyD0 ixon ixoff ixany
+	dd if=/dev/urandom bs=1024 count=20 of=/dev/ttyD0
+	echo "1. SW Flowcontrol ENABLED. Writing 20 kB of Data (check RX Field in"
+	echo "HTERM). Send CTRL+S (0x13) and CTRL+Q (0x11) Characters in HTerm, "
+	echo "The Transmission from the M-Module must stop and restart properly."
+	get_user_input
+
+	stty -F /dev/ttyD0 -ixon -ixoff -ixany
+	dd if=/dev/urandom bs=1024 count=20 of=/dev/ttyD0
+	echo "2. SW Flowcontrol DISABLED. Writing 20 kB of Data (check RX Field in"
+	echo "HTERM). Send CTRL+S (0x13) and CTRL+Q (0x11) Characters in HTerm, "
+	echo "and check that output from M-Module is not affected!"
+	get_user_input
+
+	revert_uart_settings
+}
+
+test_install modules() {
+	echo "Setting different PHY Modes:"
+	m77_ioctl -d $UARTDEVICE  -p 0
+	echo  $TESTSTRING > $UARTDEVICE
+	get_user_input
+
+	m77_ioctl -d $UARTDEVICE  -p 1
+	echo  $TESTSTRING > $UARTDEVICE
+	get_user_input
+
+	m77_ioctl -d $UARTDEVICE  -p 2
+	echo  $TESTSTRING > $UARTDEVICE
+	get_user_input
+
+	m77_ioctl -d $UARTDEVICE  -p 3
+	echo  $TESTSTRING > $UARTDEVICE
+	get_user_input
+
+	m77_ioctl -d $UARTDEVICE  -p 4
+	echo  $TESTSTRING > $UARTDEVICE
+	get_user_input
+	revert_uart_settings
+}
+
+
+###
+### "main()"
+###
+if [ "$1" = "M77" ] ; then 
+	echo "Perform Tests on M77"
+	modprobe men_lx_m77 devName=m77_1  brdName=d201_1 slotNo=2
+	test_basic_settings
+	test_m77_sw_handshakes
+	test_m77_high_baudrates
+	test_m77_phy_modes
+	sleep 1
+	rmmod men_lx_m77
+elif  [ "$1" = "M45" ] ; then 
+	echo "Perform Tests on M45N"
+	modprobe men_lx_m77 devName=m45_1 brdName=d201_1 slotNo=1
+	test_basic_settings
+	test_m77_hw_handshakes
+	test_m77_sw_handshakes
+	test_m45_tristate
+	rmmod men_lx_m77
+elif [ "$1" = "M69" ] ; then 
+	echo "Perform Tests on M69N"
+	modprobe men_lx_m77 devName=m69_1 brdName=d201_1 slotNo=0
+	test_basic_settings
+	test_m77_hw_handshakes
+	test_m77_sw_handshakes
+	rmmod men_lx_m77
+else 
+	usage
+fi

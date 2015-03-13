@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Klaus Popp (MEN Mikro Elektronik GmbH) -->
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
+	<name>13m07790</name>
+	<description>Linux UART driver package for M45N/M69N/M77</description>
+	<date>2015-03-06</date>
+	<revision>1.9</revision>
+	<docroot>DRIVERS/M077/INSTALL</docroot>
+	<modellist>
+		<model>
+			<hwname>M77</hwname>
+ 			<description>Quad UART RS232/422/485 (new 2.6 driver)</description>
+			<devnameprefix>M77</devnameprefix>
+			<devtype>NATIVE</devtype>
+			<busif>M-Module</busif>
+				<autoid>
+				<mmoduleid>0x5346004d</mmoduleid>
+			</autoid>
+			<settinglist>
+				<debugsetting desc="false" drv="false" mk="false" oss="false"/>
+			</settinglist>
+			<swmodulelist>
+				<swmodule>
+					<name>lx_m77</name>
+					<type>Native Driver</type>
+ 					<description>linux native M45N/M69N/M77 driver</description>
+					<makefilepath>DRIVERS/M077/DRIVER/driver.mak</makefilepath>
+				</swmodule>
+			</swmodulelist>
+		</model>
+		<model>
+			<hwname>M69</hwname>
+			<description>M69N Quad UART Module (new 2.6 driver)</description>
+			<devnameprefix>M69</devnameprefix>
+			<devtype>NATIVE</devtype>
+			<busif>M-Module</busif>
+				<autoid>
+				<mmoduleid>0x53467d45</mmoduleid>
+			</autoid>
+			<settinglist>
+				<debugsetting desc="false" drv="false" mk="false" oss="false"/>
+			</settinglist>
+			<swmodulelist>
+				<swmodule>
+				  <name>lx_m77</name>
+				  <description>Linux serial driver for M69N</description>
+			  	  <type>Native Driver</type>
+				  <makefilepath>DRIVERS/M077/DRIVER/driver.mak</makefilepath>
+				</swmodule>
+			</swmodulelist>
+		</model>
+		<model>
+			<hwname>M45</hwname>
+			<description>M45N octal UART Module (new 2.6 driver)</description>
+			<devnameprefix>M45</devnameprefix>
+			<devtype>NATIVE</devtype>
+			<busif>M-Module</busif>
+				<autoid>
+				<mmoduleid>0x53467d2d</mmoduleid>
+			</autoid>
+			<settinglist>
+				<debugsetting desc="false" drv="false" mk="false" oss="false"/>
+			</settinglist>
+			<swmodulelist>
+				<swmodule>
+					<name>lx_m77</name>
+					<description>Linux serial driver for M45N</description>
+					<type>Native Driver</type>
+					<makefilepath>DRIVERS/M077/DRIVER/driver.mak</makefilepath>
+				</swmodule>
+			</swmodulelist>
+		</model>
+	</modellist>
+</package>

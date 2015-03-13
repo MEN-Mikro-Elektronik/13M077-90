@@ -1,0 +1,68 @@
+===== [ History of fileset ART/13M077-90/13M077-90 ] =====
+
+
+-----[ Revision 1.9 ]-----
+[ 2015-03-06 13:14:11 by ts ]
+R: 1. compiler warning about type cast of mapbase
+   2. RTAI support in MDIS was removed
+M: 1. added explicit (int) cast of mapbase
+   2. removed first parameter (rtMode) from call to bbis_open_external_device
+
+-----[ Revision 1.8 ]-----
+[ 2014-07-15 10:52:08 by ts ]
+serial_m77_26.c
+R: Compile failed under kernel 3.10.11
+M: applied API change in tty_flip_buffer_push, passing struct tty_port, not tty_struct
+
+-----[ Revision 1.7 ]-----
+[ 2013-10-24 16:00:33 by ts ]
+serial_m77_26.c
+R: 1. compiling MDIS with A21 and gcc 4.6 showed warnings
+   2. gcc 4.6 compile on A21 failed with unknown references to kmalloc, kfree
+M: 1. added appropriate casts
+   2. include <linux/slab.h> for declarations of kmalloc/kfree
+
+-----[ Revision 1.6 ]-----
+[ 2013-10-24 15:39:36 by ts ]
+R: compile on kernel 2.6.38 failed
+M: change DECLARE_MUTEX to DEFINE_SEMAPHORE
+
+-----[ Revision 1.5 ]-----
+[ 2011-04-08 11:12:47 by rt ]
+R: 1) Only the first M77 module (per carrier board) works correct.
+M: 1) Fixed m77_init_devices() to support multiple M77 modules at the
+      same carrier board.
+
+-----[ Revision 1.4 ]-----
+[ 2010-11-05 17:51:49 by rt ]
+R: 1) M77: Half duplex modes not working if echo is off.
+   2) Linux disabled associated IRQ after 100000 cycles if any other shared
+      interupt is triggered.
+   3) Not compilable with kernel version 2.6.32.
+   4) Support more modules per default.
+M: 1) register_uarts() function fixed.
+   2) M77_IrqHandler now return LL_IRQ_DEVICE when M77 receive an IRQ.
+   3) Added compiler switches for new kernel versions.
+   4) MAX_MODS_SUPPORTED and MAX_SNGL_UARTS changed.
+
+-----[ Revision 1.3 ]-----
+[ 2008-09-04 10:57:42 by ts ]
+ 13m07790.xml
+ - clarified description that this xml file uses the new driver for 2.6 kernels
+ serial_m77_26.c
+ - replaced all calls to readb()/writeb() to MREAD_D16/MWRITE_D16 because
+     linux bytewise native mem-IO functions dont work with VME carriers.
+ - moved all HW access in 4 basic functions serial_in/out, control_in/out
+ - added revision string for version tracking
+
+-----[ Revision 1.2 ]-----
+[ 2007-08-27 10:54:42 by ts ]
+|
++ Supports M77, M45N and M69N under kernel 2.6
++ HTML Documentation added
+No support of M45N and M69N under kernel 2.4!
+
+-----[ Revision 1.1 ]-----
+[ 2003-06-11 10:06:10 by kp ]
+Initial Revision
+
