@@ -217,15 +217,15 @@ struct men_uart_config {
 /** This is the platform device platform_data structure 
  */
 struct plat_men_uart_port {
-	unsigned long	iobase;				/* io base address 				*/
-	void __iomem	*membase;			/* ioremap cookie or NULL 		*/
-	unsigned long	mapbase;			/* resource base 				*/
-	unsigned int	irq;				/* interrupt number 			*/
-	unsigned int	uartclk;			/* UART clock rate 				*/
-	unsigned char	regshift;			/* register shift 				*/
-	unsigned char	iotype;				/* UPIO_*	 					*/
+	unsigned long	iobase;		/* io base address 		*/
+	void __iomem	*membase;	/* ioremap cookie or NULL 	*/
+	unsigned long	mapbase;	/* resource base 		*/
+	unsigned int	irq;		/* interrupt number 		*/
+	unsigned int	uartclk;	/* UART clock rate 		*/
+	unsigned char	regshift;	/* register shift 		*/
+	unsigned char	iotype;		/* UPIO_*	 		*/
 	unsigned char	hub6;
-	unsigned int	flags;				/* UPF_* flags 					*/
+        unsigned int	flags;		/* UPF_* flags 			*/
 };
 
 
@@ -269,20 +269,20 @@ struct ox16c954_port {
  *  For M77/M69N 4 structs are allocated, for M45N 8
  */
 typedef struct uartmod {
-    struct list_head head;				/* for linked list 					*/
-	unsigned int  	modnum;				/* nr. in list 						*/
-	unsigned int  	modtype;			/* MOD_M45, MOD_M69 or MOD_M77		*/
-	unsigned int  	nrChannels;			/* M77/M69N: 4, M45N: 8				*/
-	unsigned int  	irq;				/* (PCI)IRQ of this Modules Carrier	*/
-	unsigned int  	line;				/* UART # from registering UART		*/
-	unsigned int  	mode[4];			/* M77: PHY mode passed at loading	*/
-	unsigned int  	echo[4];			/* M77: echo on/off (HD modes)		*/
-	char 			brdName[ARRLEN];	/* carrier name e.g. "D201_1" 		*/
-	char 			deviceName[ARRLEN];	/* dev. name e.g. "m45_1" 			*/
-	void 			*mdisDev;			/* from mdis_open_external_device 	*/
-	void			*memBase;			/* ioremapped address of Module 	*/
-    struct uart_port uart;
-	struct ox16c954_port *port8250[MAX_SNGL_UARTS];
+    struct list_head head;			/* for linked list			*/
+	unsigned int  	modnum;			/* nr. in list 				*/
+	unsigned int  	modtype;		/* MOD_M45, MOD_M69 or MOD_M77		*/
+	unsigned int  	nrChannels;		/* M77/M69N: 4, M45N: 8			*/
+	unsigned int  	irq;			/* (PCI)IRQ of this Modules Carrier	*/
+	unsigned int  	line;			/* UART # from registering UART		*/
+	unsigned int  	mode[4];		/* M77: PHY mode passed at loading	*/
+	unsigned int  	echo[4];		/* M77: echo on/off (HD modes)		*/
+	char 		brdName[ARRLEN];	/* carrier name e.g. "D201_1" 		*/
+	char 		deviceName[ARRLEN];	/* dev. name e.g. "m45_1" 		*/
+	void 		*mdisDev;		/* from mdis_open_external_device 	*/
+	void		*memBase;		/* ioremapped address of Module 	*/
+  struct uart_port uart;
+  struct ox16c954_port *port8250[MAX_SNGL_UARTS];
 
 } UARTMOD_INFO;
 
@@ -2368,7 +2368,7 @@ static int register_uarts(UARTMOD_INFO *mod )
 
 		/* use same address for mem/mapbase, shown as "MMIO" at loading */
 		mod->uart.membase 	= baseAdr;
-		mod->uart.mapbase 	= (unsigned int)baseAdr;
+		mod->uart.mapbase 	= (unsigned long)(unsigned long*)baseAdr;
 		
 		if ((retval=men_uart_register_port(&mod->uart, mod->modtype, nrChan, 
 										   &mod->port8250[nrChan]))<0) {
@@ -2484,9 +2484,9 @@ static int m77_init_devices(void)
 			goto errout;
 		}
 
-		if ( m_getmodinfo( (u_int32)mmod_data->memBase, 
-						   &modtype, &devid, 
-						   &devrev, moddevname) == 0) {
+		if ( m_getmodinfo( (unsigned long)((unsigned long*)mmod_data->memBase), 
+				   &modtype, &devid, 
+				   &devrev, moddevname) == 0) {
 			M77DBG3("getmodinfo found: '%s' devID: 0x%08x\n",moddevname,devid);
 
 			modnr = devid & 0xffff;
