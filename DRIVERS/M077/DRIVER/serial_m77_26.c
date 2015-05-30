@@ -2570,8 +2570,7 @@ static int __init m77_serial_init(void)
 {
 
 	int ret = 0;
-	printk(KERN_INFO "MEN M45/69/77 driver version %s\nbuild date: %s %s\n",
-		   RCSid, __DATE__, __TIME__);
+	printk(KERN_INFO "MEN M45/69/77 driver version %s\n", RCSid);
 	printk(KERN_INFO "Up to %d modules supported\n", MAX_MODS_SUPPORTED );
 
 	/* 2. Init the global Array of 16550(950) like ports */
