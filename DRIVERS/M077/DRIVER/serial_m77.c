@@ -322,7 +322,7 @@ MODULE_PARM_DESC( echo, "on M77: disable / enable Rx feedback in HD modes");
 /* linked List Anchor */
 static struct list_head		G_uartModListHead;
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,35)
+#if LINUX_VERSION_CODE > KERNEL_VERSION(2,6,35)
 static DEFINE_SEMAPHORE(serial_sem);
 #else 
 static DECLARE_MUTEX(serial_sem);

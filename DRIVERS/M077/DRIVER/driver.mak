@@ -7,7 +7,11 @@
 #    Description: makefile descriptor for M77 Driver, unswapped
 #                      
 #---------------------------------[ History ]---------------------------------
-# $Log: driver.mak,v $
+# 
+# 
+# 29.05.2015 ts:  removed 2.4 support, named driver file straight 
+#
+# ------------ end of CVS control ---------------
 # Revision 1.3  2007/08/14 10:39:48  ts
 # module name changed to lx_m77
 # used source file depends on $(VERSION_SUFFIX)
@@ -32,15 +36,15 @@ MAK_INCL=$(MEN_INC_DIR)/mdis_com.h   \
           $(MEN_INC_DIR)/mdis_err.h   \
           $(MEN_INC_DIR)/maccess.h    \
           $(MEN_INC_DIR)/mdis_api.h   \
-		  $(MEN_MOD_DIR)/serialP_m77.h \
-	 	  $(MEN_MOD_DIR)/serial_m77.h \
+	  $(MEN_MOD_DIR)/serialP_m77.h \
+	  $(MEN_MOD_DIR)/serial_m77.h
 
 
 MAK_OPTIM=$(OPT_1)
 
 MAK_SWITCH=$(SW_PREFIX)MAC_MEM_MAPPED 
 
-MAK_INP1=serial_m77_$(VERSION_SUFFIX)$(INP_SUFFIX)
+MAK_INP1=serial_m77$(INP_SUFFIX)
 
 MAK_INP=$(MAK_INP1)
 
