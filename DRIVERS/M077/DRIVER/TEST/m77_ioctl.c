@@ -101,7 +101,6 @@ int main(int argc, char *argv[])
 	
 	if (nverbose) {
 		printf( "MEN M45N/M69N/M77 Linux driver ioctl test\n");
-		printf( " Build: %s %s\n\n", __DATE__, __TIME__);
 	}
 
 	if (argc < 2)
