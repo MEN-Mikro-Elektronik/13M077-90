@@ -3,8 +3,8 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13m07790</name>
 	<description>Linux UART driver package for M45N/M69N/M77</description>
-	<date>2015-03-06</date>
-	<revision>1.9</revision>
+	<date>2015-07-23</date>
+	<revision>1.10</revision>
 	<docroot>DRIVERS/M077/INSTALL</docroot>
 	<modellist>
 		<model>

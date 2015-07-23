@@ -1,5 +1,12 @@
-===== [ History of fileset ART/13M077-90/13M077-90 ] =====
 
+commit 8e110d3f1878deec5a758c0c25fc543b5fc85196 (tag: 13M077-90_01_10)
+Author: thomas.schnuerer <thomas.schnuerer@men>
+Date:   Thu Jul 23 14:03:00 2015 +0200
+
+    R: macros __DATE__ and __TIME__ are deprecated and lead to build warnings or errors
+    M: removed macros from printf in ioctl test utility
+
+------- end of cvs maintenance -----------
 
 -----[ Revision 1.9 ]-----
 [ 2015-03-06 13:14:11 by ts ]
@@ -65,4 +72,11 @@ No support of M45N and M69N under kernel 2.4!
 -----[ Revision 1.1 ]-----
 [ 2003-06-11 10:06:10 by kp ]
 Initial Revision
+
+commit 8e110d3f1878deec5a758c0c25fc543b5fc85196 (HEAD, tag: 13M077-90_01_10, origin/master, origin/HEAD, master)
+Author: thomas.schnuerer <thomas.schnuerer@men>
+Date:   Thu Jul 23 14:03:00 2015 +0200
+
+    R: macros __DATE__ and __TIME__ are deprecated and lead to build warnings or errors
+    M: removed macros from printf in ioctl test utility
 
