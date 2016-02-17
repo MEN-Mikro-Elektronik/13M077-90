@@ -31,14 +31,13 @@ MAK_NAME=lx_m77
 MAK_LIBS=
 
 MAK_INCL=$(MEN_INC_DIR)/mdis_com.h   \
-          $(MEN_INC_DIR)/men_typs.h   \
-          $(MEN_INC_DIR)/oss.h        \
-          $(MEN_INC_DIR)/mdis_err.h   \
-          $(MEN_INC_DIR)/maccess.h    \
-          $(MEN_INC_DIR)/mdis_api.h   \
-	  $(MEN_MOD_DIR)/serialP_m77.h \
-	  $(MEN_MOD_DIR)/serial_m77.h
-
+         $(MEN_INC_DIR)/men_typs.h   \
+         $(MEN_INC_DIR)/oss.h        \
+         $(MEN_INC_DIR)/mdis_err.h   \
+         $(MEN_INC_DIR)/maccess.h    \
+         $(MEN_INC_DIR)/mdis_api.h   \
+		 $(MEN_MOD_DIR)/serialP_m77.h \
+		 $(MEN_MOD_DIR)/serial_m77.h
 
 MAK_OPTIM=$(OPT_1)
 

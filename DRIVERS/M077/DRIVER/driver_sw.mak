@@ -8,6 +8,8 @@
 #                      
 #---------------------------------[ History ]---------------------------------
 #
+# 29.05.2015 ts:  removed 2.4 support, named driver file straight 
+#
 # $Log: driver_sw.mak,v $
 # Revision 1.2  2007/08/14 10:40:51  ts
 # module name changed to lx_m77
@@ -42,6 +44,6 @@ MAK_SWITCH=$(SW_PREFIX)MAC_MEM_MAPPED \
 		   $(SW_PREFIX)MAC_BYTESWAP   \
 		   $(SW_PREFIX)ID_SW
 
-MAK_INP1=serial_m77_$(VERSION_SUFFIX)$(INP_SUFFIX)
+MAK_INP1=serial_m77$(INP_SUFFIX)
 
 MAK_INP=$(MAK_INP1)
