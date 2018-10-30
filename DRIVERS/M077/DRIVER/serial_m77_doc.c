@@ -13,23 +13,24 @@
  *
  *     \switches -
  */
- /*-------------------------------[ History ]--------------------------------
- *
- * $Log: serial_m77_doc.c,v $
- * Revision 1.3  2007/08/27 10:36:50  ts
- * Example for M77 mode/echo passing added
- *
- * Revision 1.2  2007/08/15 11:44:38  ts
- * finalized, typos corrected, examples and troubleshoot section
- * added
- *
- * Revision 1.1  2007/08/13 15:26:54  ts
- * Initial Revision
- *
- *
+ /*
  *---------------------------------------------------------------------------
  * (c) Copyright 2004 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
  ****************************************************************************/
+/*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 /*! \mainpage Linux native driver for quad and octal UART M-Modules.
 
