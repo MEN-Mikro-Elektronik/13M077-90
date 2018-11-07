@@ -17,20 +17,7 @@
  *     Switches: -
  *
  */
-/*-------------------------------[ History ]---------------------------------
- *
- * $Log: m77_ioctl.c,v $
- * Revision 1.3  2007/08/13 15:38:15  ts
- * Options m and w removed
- * ioctl Values of M77_PHY_INT_SET adapted to serial_m77.h
- *
- * Revision 1.2  2007/08/06 17:49:05  ts
- * dont allow using wrong argument values for phy mode on M77
- *
- * Revision 1.1  2007/08/03 16:12:34  ts
- * Initial Revision
- *
- *
+/*
  *---------------------------------------------------------------------------
  * (c) Copyright 2003-2004 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
  ****************************************************************************/

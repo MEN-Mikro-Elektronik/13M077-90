@@ -11,25 +11,7 @@
  *
  *     Switches: -
  */
-/*-------------------------------[ History ]---------------------------------
- *
- * $Log: serial_m77.h,v $
- * Revision 1.5  2008/05/05 17:53:23  ts
- * changed comment about usage of readb()/writeb() to MREAD_D16/MWRITE_D16
- *
- * Revision 1.4  2007/08/13 15:10:34  ts
- * Release Version, Cosmetics
- *
- * Revision 1.3  03.08.2007 16:06:06  ts
- * ioctl M45_TIO_TRI_MODE for M45N added
- * Cosmetics
- *
- * Revision 1.2  25.06.2007 17:07:32 by ts
- * + additional defines for new 2.6 driver
- *
- * Revision 1.1  11.06.2003 10:06:08 by kp
- * Initial Revision
- *
+/*
  *---------------------------------------------------------------------------
  * (c) Copyright 2007 by MEN mikro elektronik GmbH, Nuremberg, Germany 
  ****************************************************************************/
