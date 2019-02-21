@@ -6,24 +6,21 @@
 #  
 #    Description: makefile descriptor for MDIS LL-Driver 
 #                      
-#---------------------------------[ History ]---------------------------------
-#
-# 29.05.2015 ts:  removed 2.4 support, named driver file straight 
-#
-# $Log: driver_sw.mak,v $
-# Revision 1.2  2007/08/14 10:40:51  ts
-# module name changed to lx_m77
-# used source file depends on $(VERSION_SUFFIX)
-#
-# Revision 1.2  2007/06/25 17:08:45  ts
-# Cosmetic, Log entry for Header added
-#
-# Revision 1.1  11.06.2003 10:06:05 by kp
-# Initial Revision
-#
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2003 by MEN mikro elektronik GmbH, Nuernberg, Germany 
+#   Copyright (c) 2003-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=lx_m77_sw
 
