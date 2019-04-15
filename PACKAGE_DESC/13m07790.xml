@@ -5,7 +5,7 @@
 	<description>Linux UART driver package for M45N/M69N/M77</description>
 	<date>2015-07-23</date>
 	<revision>1.10</revision>
-	<docroot>DRIVERS/M077/INSTALL</docroot>
+	<docroot>DRIVERS/M077/DOC/html/index.html</docroot>
 	<modellist>
 		<model>
 			<hwname>M77</hwname>
