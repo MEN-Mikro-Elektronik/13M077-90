@@ -243,6 +243,6 @@ ttyD3 at MMIO 0xc9036e30 (irq = 255) is a 16550A
 */
 
 
-/** \page dummy
+/** \page m77dummy MEN logo
   \menimages
 */
