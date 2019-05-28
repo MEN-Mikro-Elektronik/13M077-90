@@ -4,10 +4,6 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="__stop_tx"><param name="Name" value="__stop_tx"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a77"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="group____CHAM__MAGICWORD.html"><param name="Name" value="_CHAM_MAGICWORD"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="group____CHAM__MAGICWORD.html#a0"><param name="Name" value="CHAMELEON_MAGIC_00"></OBJECT>
@@ -51,14 +47,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__BA.html#o0"><param name="Name" value="CHAMELEONV2_BA"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__BRIDGE.html#o12"><param name="Name" value="CHAMELEONV2_BRIDGE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__UNIT.html#o10"><param name="Name" value="CHAMELEONV2_UNIT"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="autoconfig"><param name="Name" value="autoconfig"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a76"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="autoconfig_16550a"><param name="Name" value="autoconfig_16550a"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a75"><param name="Name" value="serial_m77_26.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="ba"><param name="Name" value="ba"></OBJECT>
   <UL>
@@ -110,8 +98,8 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html"><param name="Name" value="chameleon.h"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a140"><param name="Name" value="CHAMELEONV2_FILENAME_SIZE"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a156"><param name="Name" value="CHAMELEONV2_HANDLE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a117"><param name="Name" value="CHAMELEONV2_FILENAME_SIZE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a133"><param name="Name" value="CHAMELEONV2_HANDLE"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEON__DRIVER__T.html"><param name="Name" value="CHAMELEON_DRIVER_T"></OBJECT>
   <UL>
@@ -221,7 +209,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="CHAMELEONV2_FILENAME_SIZE"><param name="Name" value="CHAMELEONV2_FILENAME_SIZE"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a140"><param name="Name" value="chameleon.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a117"><param name="Name" value="chameleon.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__FIND.html"><param name="Name" value="CHAMELEONV2_FIND"></OBJECT>
   <UL>
@@ -235,7 +223,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="CHAMELEONV2_HANDLE"><param name="Name" value="CHAMELEONV2_HANDLE"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a156"><param name="Name" value="chameleon.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="chameleon_8h.html#a133"><param name="Name" value="chameleon.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="CHAMELEONV2_HANDLE_ILL"><param name="Name" value="CHAMELEONV2_HANDLE_ILL"></OBJECT>
   <UL>
@@ -312,18 +300,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__INFO.html#o0"><param name="Name" value="CHAMELEONV2_INFO"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="check_modem_status"><param name="Name" value="check_modem_status"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a80"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="control_in"><param name="Name" value="control_in"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a65"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="control_out"><param name="Name" value="control_out"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a66"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="CpuIdent"><param name="Name" value="CpuIdent"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAM__FUNCTBL.html#o6"><param name="Name" value="CHAM_FUNCTBL"></OBJECT>
@@ -335,10 +311,6 @@
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="dbar"><param name="Name" value="dbar"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__BRIDGE.html#o8"><param name="Name" value="CHAMELEONV2_BRIDGE"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="deinit_devices"><param name="Name" value="deinit_devices"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a88"><param name="Name" value="serial_m77_26.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="devId"><param name="Name" value="devId"></OBJECT>
   <UL>
@@ -393,105 +365,9 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__CPU.html#o6"><param name="Name" value="CHAMELEONV2_CPU"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__UNIT.html#o6"><param name="Name" value="CHAMELEONV2_UNIT"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="m77_init_devices"><param name="Name" value="m77_init_devices"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a90"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="M77_IrqHandler"><param name="Name" value="M77_IrqHandler"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a82"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="magicWord"><param name="Name" value="magicWord"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__TABLE.html#o5"><param name="Name" value="CHAMELEONV2_TABLE"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_break_ctl"><param name="Name" value="men_uart_break_ctl"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a51"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_clear_fifos"><param name="Name" value="men_uart_clear_fifos"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a72"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_config_port"><param name="Name" value="men_uart_config_port"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a58"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_enable_ms"><param name="Name" value="men_uart_enable_ms"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a50"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_find_match_or_unused"><param name="Name" value="men_uart_find_match_or_unused"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a84"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_get_divisor"><param name="Name" value="men_uart_get_divisor"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a83"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_get_mctrl"><param name="Name" value="men_uart_get_mctrl"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a46"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_handle_port"><param name="Name" value="men_uart_handle_port"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a81"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_ioctl"><param name="Name" value="men_uart_ioctl"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a61"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_m77phy"><param name="Name" value="men_uart_m77phy"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a74"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_register_port"><param name="Name" value="men_uart_register_port"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a85"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_set_mctrl"><param name="Name" value="men_uart_set_mctrl"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a45"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_set_sleep"><param name="Name" value="men_uart_set_sleep"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a73"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_set_termios"><param name="Name" value="men_uart_set_termios"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a54"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_shutdown"><param name="Name" value="men_uart_shutdown"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a53"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_start_tx"><param name="Name" value="men_uart_start_tx"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a48"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_startup"><param name="Name" value="men_uart_startup"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a52"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_stop_rx"><param name="Name" value="men_uart_stop_rx"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a49"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_stop_tx"><param name="Name" value="men_uart_stop_tx"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a47"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_tx_empty"><param name="Name" value="men_uart_tx_empty"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a44"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_type"><param name="Name" value="men_uart_type"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a59"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="men_uart_unregister_port"><param name="Name" value="men_uart_unregister_port"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a86"><param name="Name" value="serial_m77_26.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="minRevision"><param name="Name" value="minRevision"></OBJECT>
   <UL>
@@ -515,22 +391,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__BRIDGE.html#o10"><param name="Name" value="CHAMELEONV2_BRIDGE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__UNIT.html#o8"><param name="Name" value="CHAMELEONV2_UNIT"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="parse_m77_phyinfo"><param name="Name" value="parse_m77_phyinfo"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a89"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="probe"><param name="Name" value="probe"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEON__DRIVER__T.html#o3"><param name="Name" value="CHAMELEON_DRIVER_T"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__DRIVER__T.html#o3"><param name="Name" value="CHAMELEONV2_DRIVER_T"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="receive_chars"><param name="Name" value="receive_chars"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a79"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="register_uarts"><param name="Name" value="register_uarts"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a62"><param name="Name" value="serial_m77_26.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="remove"><param name="Name" value="remove"></OBJECT>
   <UL>
@@ -550,79 +414,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__TABLE.html#o3"><param name="Name" value="CHAMELEONV2_TABLE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__UNIT.html#o2"><param name="Name" value="CHAMELEONV2_UNIT"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_efr_read"><param name="Name" value="serial_efr_read"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a67"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_efr_write"><param name="Name" value="serial_efr_write"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a68"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_icr_read"><param name="Name" value="serial_icr_read"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a71"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_icr_write"><param name="Name" value="serial_icr_write"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a70"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_in"><param name="Name" value="serial_in"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a63"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a77"><param name="Name" value="__stop_tx"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a76"><param name="Name" value="autoconfig"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a75"><param name="Name" value="autoconfig_16550a"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a80"><param name="Name" value="check_modem_status"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a65"><param name="Name" value="control_in"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a66"><param name="Name" value="control_out"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a88"><param name="Name" value="deinit_devices"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a90"><param name="Name" value="m77_init_devices"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a82"><param name="Name" value="M77_IrqHandler"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a51"><param name="Name" value="men_uart_break_ctl"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a72"><param name="Name" value="men_uart_clear_fifos"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a58"><param name="Name" value="men_uart_config_port"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a50"><param name="Name" value="men_uart_enable_ms"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a84"><param name="Name" value="men_uart_find_match_or_unused"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a83"><param name="Name" value="men_uart_get_divisor"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a46"><param name="Name" value="men_uart_get_mctrl"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a81"><param name="Name" value="men_uart_handle_port"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a61"><param name="Name" value="men_uart_ioctl"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a74"><param name="Name" value="men_uart_m77phy"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a85"><param name="Name" value="men_uart_register_port"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a45"><param name="Name" value="men_uart_set_mctrl"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a73"><param name="Name" value="men_uart_set_sleep"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a54"><param name="Name" value="men_uart_set_termios"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a53"><param name="Name" value="men_uart_shutdown"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a48"><param name="Name" value="men_uart_start_tx"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a52"><param name="Name" value="men_uart_startup"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a49"><param name="Name" value="men_uart_stop_rx"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a47"><param name="Name" value="men_uart_stop_tx"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a44"><param name="Name" value="men_uart_tx_empty"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a59"><param name="Name" value="men_uart_type"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a86"><param name="Name" value="men_uart_unregister_port"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a89"><param name="Name" value="parse_m77_phyinfo"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a79"><param name="Name" value="receive_chars"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a62"><param name="Name" value="register_uarts"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a67"><param name="Name" value="serial_efr_read"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a68"><param name="Name" value="serial_efr_write"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a71"><param name="Name" value="serial_icr_read"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a70"><param name="Name" value="serial_icr_write"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a63"><param name="Name" value="serial_in"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a64"><param name="Name" value="serial_out"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a69"><param name="Name" value="set_inband_flowctrl"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a78"><param name="Name" value="transmit_chars"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="serial_out"><param name="Name" value="serial_out"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a64"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="set_inband_flowctrl"><param name="Name" value="set_inband_flowctrl"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a69"><param name="Name" value="serial_m77_26.c"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="size"><param name="Name" value="size"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAMELEONV2__BA.html#o1"><param name="Name" value="CHAMELEONV2_BA"></OBJECT>
@@ -640,10 +431,6 @@
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="Term"><param name="Name" value="Term"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structCHAM__FUNCTBL.html#o8"><param name="Name" value="CHAM_FUNCTBL"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="See Also" value="transmit_chars"><param name="Name" value="transmit_chars"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="serial__m77__26_8c.html#a78"><param name="Name" value="serial_m77_26.c"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="type"><param name="Name" value="type"></OBJECT>
   <UL>

@@ -20,10 +20,8 @@ men__chameleon_8h-source.html
 serial__m77_8h-source.html
 serialP__m77_8h-source.html
 chameleon_8h.html
-m77__ioctl_8c.html
 men__chameleon_8h.html
 serial__m77_8h.html
-serial__m77__26_8c.html
 serial__m77__doc_8c.html
 annotated.html
 functions.html
@@ -46,7 +44,7 @@ structmen__uart__config.html
 structox16c954__port.html
 structplat__men__uart__port.html
 structuartmod.html
-dummy.html
+m77dummy.html
 group____CHAMV2__ERRCODES.html
 group____CHAMV2__SUCCCODES.html
 group____CHAM__MAGICWORD.html
@@ -54,8 +52,6 @@ group____CHAMV2__BUSTYPE.html
 group____CHAMV2__FF.html
 modules.html
 globals.html
-globals_func.html
-globals_vars.html
 globals_type.html
 globals_defs.html
 pages.html

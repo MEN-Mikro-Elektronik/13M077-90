@@ -9,10 +9,8 @@
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="chameleon.h"><param name="Local" value="chameleon_8h.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="defsfile.h"><param name="ImageNumber" value="11"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="m77_ioctl.c"><param name="Local" value="m77__ioctl_8c.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="men_chameleon.h"><param name="Local" value="men__chameleon_8h.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="serial_m77.h"><param name="Local" value="serial__m77_8h.html"><param name="ImageNumber" value="11"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="serial_m77_26.c"><param name="Local" value="serial__m77__26_8c.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="serial_m77_doc.c"><param name="Local" value="serial__m77__doc_8c.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="serialP_m77.h"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
@@ -59,6 +57,6 @@
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Globals"><param name="Local" value="globals.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Related Pages"><param name="Local" value="pages.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="dummy"><param name="Local" value="dummy.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="MEN logo"><param name="Local" value="m77dummy.html"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
 </UL>
