@@ -3,8 +3,6 @@
  *         Name: defsfile.h
  *
  *       Author: win
- *        $Date: 2007/08/15 17:05:59 $
- *    $Revision: 1.2 $
  * 
  *  Description: header file for m77-tty-driver
  *				 

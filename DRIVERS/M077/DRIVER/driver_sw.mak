@@ -1,8 +1,6 @@
 #**************************  M a k e f i l e ********************************
 #  
 #         Author: nw/ts
-#          $Date: 2007/08/14 10:40:51 $
-#      $Revision: 1.2 $
 #  
 #    Description: makefile descriptor for MDIS LL-Driver 
 #                      
@@ -23,6 +21,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=lx_m77_sw
+# the next line is updated during the MDIS installation
+STAMPED_REVISION="13M077-90_01_12-7-g9e77041-dirty_2019-05-28"
+
+DEF_REVISION=MAK_REVISION=$(STAMPED_REVISION)
 
 MAK_LIBS=
 
@@ -38,6 +40,7 @@ MAK_INCL=$(MEN_INC_DIR)/mdis_com.h     \
 MAK_OPTIM=$(OPT_1)
 
 MAK_SWITCH=$(SW_PREFIX)MAC_MEM_MAPPED \
+		$(SW_PREFIX)$(DEF_REVISION) \
 		   $(SW_PREFIX)MAC_BYTESWAP   \
 		   $(SW_PREFIX)ID_SW
 

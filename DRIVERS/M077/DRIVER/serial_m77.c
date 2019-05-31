@@ -3,8 +3,6 @@
  *        \file  serial_m77_26.c
  *
  *      \author  thomas schnuerer
- *        $Date: 2015/03/06 13:06:07 $
- *    $Revision: 1.21 $
  * 
  *       \brief  Kernel 2.6 driver for M77 modules 
  *               Attention: Instanciate carrier Board MDIS device prior to
@@ -61,6 +59,8 @@
 #include <MEN/mk_nonmdisif.h>
 #include <MEN/mdis_com.h>
 #include <MEN/modcom.h>
+
+static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*-----------------------------+
 |   DEFINES                    |
@@ -251,7 +251,6 @@ static DEFINE_SEMAPHORE(serial_sem);
 static DECLARE_MUTEX(serial_sem);
 #endif
 
-static const char RCSid[]="$Id: serial_m77_26.c,v 1.21 2015/03/06 13:06:07 ts Exp $";
 
 /*-----------------------------+
 |  PROTOTYPES                  |
@@ -2493,7 +2492,7 @@ static int __init m77_serial_init(void)
 {
 
 	int ret = 0;
-	printk(KERN_INFO "MEN M45/69/77 driver version %s\n", RCSid);
+	printk(KERN_INFO "MEN M45/69/77 driver version %s\n", IdentString);
 	printk(KERN_INFO "Up to %d modules supported\n", MAX_MODS_SUPPORTED );
 
 	/* 2. Init the global Array of 16550(950) like ports */

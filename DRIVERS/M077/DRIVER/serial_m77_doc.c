@@ -3,8 +3,6 @@
  *        \file  serial_m77_doc.c
  *
  *      \author  thomas.schnuerer@men.de
- *        $Date: 2007/08/27 10:36:50 $
- *    $Revision: 1.3 $
  *
  *      \brief   User documentation for native Linux driver of
  *				 M45N, M69N and M77

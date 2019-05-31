@@ -3,8 +3,6 @@
  *        \file  serial_m77.h
  *
  *      \author  nw/ts
- *        $Date: 2008/05/05 17:53:23 $
- *    $Revision: 1.5 $
  * 
  *       \brief  Kernel 2.4/2.6 driver Header for M77 
  *				 (M45N/M69N for 2.6 only) Modules 

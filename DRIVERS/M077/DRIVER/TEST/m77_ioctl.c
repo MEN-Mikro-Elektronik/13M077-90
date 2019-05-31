@@ -3,8 +3,6 @@
  *        \file  m77_ioctl.c
  *
  *      \author  thomas.schnuerer@men.de
- *        $Date: 2007/08/13 15:38:15 $
- *    $Revision: 1.3 $
  * 
  *  	 \brief  Verification helper tool to call M45N/M77 specific ioctls
  * 				 for enable/disable of Tristate Mode (M45N) and setting
