@@ -13,7 +13,7 @@
 			<devnameprefix>M77</devnameprefix>
 			<devtype>NATIVE</devtype>
 			<busif>M-Module</busif>
-				<autoid>
+			<autoid>
 				<mmoduleid>0x5346004d</mmoduleid>
 			</autoid>
 			<settinglist>
@@ -55,7 +55,7 @@
 			<devnameprefix>M45</devnameprefix>
 			<devtype>NATIVE</devtype>
 			<busif>M-Module</busif>
-				<autoid>
+			<autoid>
 				<mmoduleid>0x53467d2d</mmoduleid>
 			</autoid>
 			<settinglist>
