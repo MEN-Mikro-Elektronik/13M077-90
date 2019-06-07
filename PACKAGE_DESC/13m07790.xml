@@ -34,7 +34,7 @@
 			<devnameprefix>M69</devnameprefix>
 			<devtype>NATIVE</devtype>
 			<busif>M-Module</busif>
-				<autoid>
+			<autoid>
 				<mmoduleid>0x53467d45</mmoduleid>
 			</autoid>
 			<settinglist>
