@@ -2414,6 +2414,7 @@ static int m77_init_devices(void)
 			modnr = devid & 0xffff;
 			mmod_data->modtype = modnr;
 			strncpy( mmod_data->deviceName, device, ARRLEN-1 );
+			mmod_data->deviceName[ARRLEN-1] = '\0';
 
 			/*  sanity checks against wrong driver insertion */
 			if (strncmp("m45" ,devName[m_idx], 3 ) && (modnr == MOD_M45)){
@@ -2465,7 +2466,8 @@ static int m77_init_devices(void)
 		register_uarts(mmod_data);
 
 		/* current carrier becomes old one  */
-		strncpy(prevBrdName, brdName[m_idx], ARRLEN);
+		strncpy(prevBrdName, brdName[m_idx], ARRLEN-1);
+		prevBrdName[ARRLEN-1] = '\0';
 
 		m_idx++; 
 
