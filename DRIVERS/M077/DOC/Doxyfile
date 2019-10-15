@@ -1,7 +1,7 @@
 @INCLUDE_PATH = $(MEN_DOXYGENTMPL)
 @INCLUDE = DoxyfileCommon
 
-#MDIS_COMMIT=0c5651a4e2ff3e67867f9b977954c1833f770436
+#MDIS_COMMIT=057b51e188c699c116dc0926af31cb74cca8d38d
 
 PROJECT_NAME           = "Linux native Driver for M45N/M69N/M77 UART Modules"
 INPUT                  = \

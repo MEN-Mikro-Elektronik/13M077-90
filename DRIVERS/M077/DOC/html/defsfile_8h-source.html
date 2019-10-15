@@ -26,86 +26,84 @@
 00003 <span class="comment"> *         Name: defsfile.h</span>
 00004 <span class="comment"> *</span>
 00005 <span class="comment"> *       Author: win</span>
-00006 <span class="comment"> *        $Date: 2007/08/15 17:05:59 $</span>
-00007 <span class="comment"> *    $Revision: 1.2 $</span>
-00008 <span class="comment"> * </span>
-00009 <span class="comment"> *  Description: header file for m77-tty-driver</span>
-00010 <span class="comment"> *               </span>
-00011 <span class="comment"> *     Switches: -</span>
-00012 <span class="comment"> *</span>
-00013 <span class="comment"> *---------------------------------------------------------------------------</span>
-00014 <span class="comment"> * Copyright (c) 2003-2019, MEN Mikro Elektronik GmbH</span>
-00015 <span class="comment"> ****************************************************************************/</span>
-00016 <span class="comment">/*</span>
-00017 <span class="comment">* This program is free software: you can redistribute it and/or modify</span>
-00018 <span class="comment">* it under the terms of the GNU General Public License as published by</span>
-00019 <span class="comment">* the Free Software Foundation, either version 2 of the License, or</span>
-00020 <span class="comment">* (at your option) any later version.</span>
-00021 <span class="comment">*</span>
-00022 <span class="comment">* This program is distributed in the hope that it will be useful,</span>
-00023 <span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-00024 <span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-00025 <span class="comment">* GNU General Public License for more details.</span>
-00026 <span class="comment">*</span>
-00027 <span class="comment">* You should have received a copy of the GNU General Public License</span>
-00028 <span class="comment">* along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-00029 <span class="comment">*/</span>
-00030 
-00031 <span class="preprocessor">#ifndef _DEFSFILE_H</span>
-00032 <span class="preprocessor"></span><span class="preprocessor">#define _DEFSFILE_H</span>
-00033 <span class="preprocessor"></span>
-00034 <span class="keyword">struct </span>M77dev_struct{
-00035     <span class="keywordtype">void</span>  *G_dev;
-00036     MACCESS  G_ma;                <span class="comment">/* virtual mapped adress */</span>
-00037     <span class="keywordtype">char</span>          *brdName;       <span class="comment">/* device name of carrier board */</span>
-00038     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>  slotNo;        <span class="comment">/* slot number on carrier board */</span>
-00039     u_int32        irqVector;     <span class="comment">/* VME-interrupt line */</span>
-00040     u_int8         irq_cnt;       <span class="comment">/* counter for used irqs */</span>
-00041     <span class="keyword">struct </span>M77chan_struct   *m77chan[4];     <span class="comment">/* channel struct */</span>
-00042     <span class="keyword">struct </span>M77dev_struct    *m77dev_prev;    <span class="comment">/* For the linked list */</span>
-00043     <span class="keyword">struct </span>M77dev_struct    *m77dev_next;
-00044 };
-00045 
-00046 <span class="keyword">struct </span>M77chan_struct{
-00047     <span class="keywordtype">void</span> *G_ma;                   <span class="comment">/* virtual mapped address  */</span>
-00048     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *iomem_base;    <span class="comment">/* virtual address for register access */</span>
-00049     <span class="keyword">struct </span>async_struct *info;
-00050     u_int8  channel_nr;           <span class="comment">/* Channel-nr. [0-3] */</span>
-00051     u_int8  minor;                <span class="comment">/* line, retval from register_serial */</span>
-00052     u_int16 physInt;              <span class="comment">/* interface mode */</span>
-00053     u_int8  echo_supress;         <span class="comment">/* enable receive line */</span>
-00054     u_int16 ACR;                  <span class="comment">/* content of ACR-register */</span>
-00055     <span class="keyword">struct </span>M77dev_struct     *m77dev;        <span class="comment">/* M77 device (modul) */</span>
-00056     <span class="keyword">struct </span>M77chan_struct    *m77chan_prev;  <span class="comment">/* For the linked list */</span>
-00057     <span class="keyword">struct </span>M77chan_struct    *m77chan_next;
-00058 };
+00006 <span class="comment"> * </span>
+00007 <span class="comment"> *  Description: header file for m77-tty-driver</span>
+00008 <span class="comment"> *               </span>
+00009 <span class="comment"> *     Switches: -</span>
+00010 <span class="comment"> *</span>
+00011 <span class="comment"> *---------------------------------------------------------------------------</span>
+00012 <span class="comment"> * Copyright (c) 2003-2019, MEN Mikro Elektronik GmbH</span>
+00013 <span class="comment"> ****************************************************************************/</span>
+00014 <span class="comment">/*</span>
+00015 <span class="comment">* This program is free software: you can redistribute it and/or modify</span>
+00016 <span class="comment">* it under the terms of the GNU General Public License as published by</span>
+00017 <span class="comment">* the Free Software Foundation, either version 2 of the License, or</span>
+00018 <span class="comment">* (at your option) any later version.</span>
+00019 <span class="comment">*</span>
+00020 <span class="comment">* This program is distributed in the hope that it will be useful,</span>
+00021 <span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+00022 <span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+00023 <span class="comment">* GNU General Public License for more details.</span>
+00024 <span class="comment">*</span>
+00025 <span class="comment">* You should have received a copy of the GNU General Public License</span>
+00026 <span class="comment">* along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+00027 <span class="comment">*/</span>
+00028 
+00029 <span class="preprocessor">#ifndef _DEFSFILE_H</span>
+00030 <span class="preprocessor"></span><span class="preprocessor">#define _DEFSFILE_H</span>
+00031 <span class="preprocessor"></span>
+00032 <span class="keyword">struct </span>M77dev_struct{
+00033     <span class="keywordtype">void</span>  *G_dev;
+00034     MACCESS  G_ma;                <span class="comment">/* virtual mapped adress */</span>
+00035     <span class="keywordtype">char</span>          *brdName;       <span class="comment">/* device name of carrier board */</span>
+00036     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>  slotNo;        <span class="comment">/* slot number on carrier board */</span>
+00037     u_int32        irqVector;     <span class="comment">/* VME-interrupt line */</span>
+00038     u_int8         irq_cnt;       <span class="comment">/* counter for used irqs */</span>
+00039     <span class="keyword">struct </span>M77chan_struct   *m77chan[4];     <span class="comment">/* channel struct */</span>
+00040     <span class="keyword">struct </span>M77dev_struct    *m77dev_prev;    <span class="comment">/* For the linked list */</span>
+00041     <span class="keyword">struct </span>M77dev_struct    *m77dev_next;
+00042 };
+00043 
+00044 <span class="keyword">struct </span>M77chan_struct{
+00045     <span class="keywordtype">void</span> *G_ma;                   <span class="comment">/* virtual mapped address  */</span>
+00046     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *iomem_base;    <span class="comment">/* virtual address for register access */</span>
+00047     <span class="keyword">struct </span>async_struct *info;
+00048     u_int8  channel_nr;           <span class="comment">/* Channel-nr. [0-3] */</span>
+00049     u_int8  minor;                <span class="comment">/* line, retval from register_serial */</span>
+00050     u_int16 physInt;              <span class="comment">/* interface mode */</span>
+00051     u_int8  echo_supress;         <span class="comment">/* enable receive line */</span>
+00052     u_int16 ACR;                  <span class="comment">/* content of ACR-register */</span>
+00053     <span class="keyword">struct </span>M77dev_struct     *m77dev;        <span class="comment">/* M77 device (modul) */</span>
+00054     <span class="keyword">struct </span>M77chan_struct    *m77chan_prev;  <span class="comment">/* For the linked list */</span>
+00055     <span class="keyword">struct </span>M77chan_struct    *m77chan_next;
+00056 };
+00057 
+00058 <span class="keyword">struct </span>M77dev_struct *m77struct = 0;
 00059 
-00060 <span class="keyword">struct </span>M77dev_struct *m77struct = 0;
-00061 
-00062 <span class="keyword">static</span> <span class="keywordtype">int</span> InitModuleParm(<span class="keywordtype">void</span>);
-00063 <span class="keyword">static</span> <span class="keywordtype">int</span> GetM77Chan(u_int8 minor, <span class="keyword">struct</span> M77chan_struct **m77chan_res);
-00064 <span class="keyword">static</span> <span class="keywordtype">int</span> M77PhysIntSet(<span class="keyword">struct</span> M77chan_struct *m77chan, u_int16 drvMode);
-00065 
-00066 <span class="preprocessor">#define M77_SIZE_FIFO            128</span>
-00067 <span class="preprocessor"></span>
-00068 <span class="comment">/* offset for M77 HW line driver configuration register &amp; ISR register */</span>
-00069 <span class="preprocessor">#ifdef M77_DCR_REG_BASE</span>
-00070 <span class="preprocessor"></span><span class="preprocessor">#undef M77_DCR_REG_BASE     </span><span class="comment">/* dont confuse with value from serial_m77.h */</span>
-00071 <span class="preprocessor">#define M77_DCR_REG_BASE    0x40    </span><span class="comment">/* offset of Driver config. register */</span>
-00072 <span class="preprocessor">#endif</span>
+00060 <span class="keyword">static</span> <span class="keywordtype">int</span> InitModuleParm(<span class="keywordtype">void</span>);
+00061 <span class="keyword">static</span> <span class="keywordtype">int</span> GetM77Chan(u_int8 minor, <span class="keyword">struct</span> M77chan_struct **m77chan_res);
+00062 <span class="keyword">static</span> <span class="keywordtype">int</span> M77PhysIntSet(<span class="keyword">struct</span> M77chan_struct *m77chan, u_int16 drvMode);
+00063 
+00064 <span class="preprocessor">#define M77_SIZE_FIFO            128</span>
+00065 <span class="preprocessor"></span>
+00066 <span class="comment">/* offset for M77 HW line driver configuration register &amp; ISR register */</span>
+00067 <span class="preprocessor">#ifdef M77_DCR_REG_BASE</span>
+00068 <span class="preprocessor"></span><span class="preprocessor">#undef M77_DCR_REG_BASE     </span><span class="comment">/* dont confuse with value from serial_m77.h */</span>
+00069 <span class="preprocessor">#define M77_DCR_REG_BASE    0x40    </span><span class="comment">/* offset of Driver config. register */</span>
+00070 <span class="preprocessor">#endif</span>
+00071 <span class="preprocessor"></span>
+00072 <span class="preprocessor">#define M77_IRQ_REG     0x48</span>
 00073 <span class="preprocessor"></span>
-00074 <span class="preprocessor">#define M77_IRQ_REG     0x48</span>
-00075 <span class="preprocessor"></span>
-00076 <span class="comment">/* equates for M77 configuration/interrupt register */</span>
-00077 <span class="preprocessor">#define M77_IRQ_CLEAR       0x01</span>
-00078 <span class="preprocessor"></span><span class="preprocessor">#define M77_IRQ_EN      0x02</span>
-00079 <span class="preprocessor"></span><span class="preprocessor">#define M77_TX_EN       0x04</span>
-00080 <span class="preprocessor"></span><span class="preprocessor">#define M77_RX_EN               0x08</span>
-00081 <span class="preprocessor"></span>
-00082 <span class="comment">/* equates for additional control register */</span>
-00083 <span class="preprocessor">#define M77_ACR_HD_DRIVER_CTL   0x18  </span><span class="comment">/* line driver ctrl. in HD-mode */</span>
-00084 
-00085 <span class="preprocessor">#endif // _DEFSFILE_H</span>
+00074 <span class="comment">/* equates for M77 configuration/interrupt register */</span>
+00075 <span class="preprocessor">#define M77_IRQ_CLEAR       0x01</span>
+00076 <span class="preprocessor"></span><span class="preprocessor">#define M77_IRQ_EN      0x02</span>
+00077 <span class="preprocessor"></span><span class="preprocessor">#define M77_TX_EN       0x04</span>
+00078 <span class="preprocessor"></span><span class="preprocessor">#define M77_RX_EN               0x08</span>
+00079 <span class="preprocessor"></span>
+00080 <span class="comment">/* equates for additional control register */</span>
+00081 <span class="preprocessor">#define M77_ACR_HD_DRIVER_CTL   0x18  </span><span class="comment">/* line driver ctrl. in HD-mode */</span>
+00082 
+00083 <span class="preprocessor">#endif // _DEFSFILE_H</span>
 </pre></div>
 	</div>
 </div>
@@ -113,8 +111,7 @@
 <div class="footer">
 <!-- Footer -->
 	<p class="footer">
-	Generated for Linux native Driver for M45N/M69N/M77 UART Modules using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Generated for Linux native Driver for M45N/M69N/M77 UART Modules using <a href="http://www.doxygen.org">doxygen</a>. All Rights Reserved.
 	</p>
 </div>
 
