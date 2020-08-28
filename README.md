@@ -2,4 +2,4 @@
 
 **Linux UART driver package for M45N/M69N/M77**
 
-Documentation: [DRIVERS/M077/INSTALL](DRIVERS/M077/INSTALL)
+Documentation: [DRIVERS/M077/DOC/html/index.html](DRIVERS/M077/DOC/html/index.html)
