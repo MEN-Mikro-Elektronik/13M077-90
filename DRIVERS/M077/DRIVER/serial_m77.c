@@ -2465,6 +2465,12 @@ static int m77_init_devices(void)
 		/* Register all UART channels of this M-Module */
 		register_uarts(mmod_data);
 
+		retval = mdis_enable_external_irq( mmod_data->mdisDev );
+		if ( retval < 0 ) {	
+			printk(KERN_ERR "*** enable irq error: %d\n", retval);
+			retval = -EBUSY;
+			goto errout;
+		}
 		/* current carrier becomes old one  */
 		strncpy(prevBrdName, brdName[m_idx], ARRLEN-1);
 		prevBrdName[ARRLEN-1] = '\0';
