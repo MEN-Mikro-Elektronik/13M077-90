@@ -113,6 +113,7 @@ static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 #define DEBUG_INTR(fmt...)	do { } while (0)
 #endif
 
+#define MEN_UART_MAJOR	19 /** Same as old CYCLADES_MAJOR */
 
 /*-----------------------------+
 |   TYPEDEFS                   |
@@ -619,11 +620,7 @@ static struct uart_driver men_uart_reg = {
 	.owner			= THIS_MODULE,
 	.driver_name	= "serM77",
 	.dev_name		= UART_NAME_PREFIX,
-#ifdef CYCLADES_MAJOR
-	.major			= CYCLADES_MAJOR,
-#else
 	.major			= MEN_UART_MAJOR,
-#endif
 	.minor			= 0,
 	.nr				= MAX_SNGL_UARTS,
 	.cons			= NULL/* MEN_UART_CONSOLE */,
