@@ -41,9 +41,6 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/list.h>			/* linked list functions	*/
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,19)
-# include <linux/config.h>
-#endif
 #include <linux/tty.h>
 #include <linux/tty_flip.h>
 #include "serial_m77.h"
@@ -66,8 +63,6 @@ static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 |   DEFINES                    |
 +-----------------------------*/
 
-
-#define Z025_SERIAL_DIFF    KERNEL_VERSION(2,6,14)
 
 #define MM_UARTCLK			18432000	/* 18,432 MHz 				 */
 #define	MAX_MODS_SUPPORTED  8			/* up to # Modules supported */
@@ -118,6 +113,7 @@ static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 #define DEBUG_INTR(fmt...)	do { } while (0)
 #endif
 
+#define MEN_UART_MAJOR	19 /** Same as old CYCLADES_MAJOR */
 
 /*-----------------------------+
 |   TYPEDEFS                   |
@@ -245,12 +241,7 @@ MODULE_PARM_DESC( echo, "on M77: disable / enable Rx feedback in HD modes");
 /* linked List Anchor */
 static struct list_head		G_uartModListHead;
 
-#if LINUX_VERSION_CODE > KERNEL_VERSION(2,6,35)
 static DEFINE_SEMAPHORE(serial_sem);
-#else 
-static DECLARE_MUTEX(serial_sem);
-#endif
-
 
 /*-----------------------------+
 |  PROTOTYPES                  |
@@ -259,13 +250,8 @@ static DECLARE_MUTEX(serial_sem);
 static unsigned int men_uart_tx_empty(struct uart_port *port);
 static void men_uart_set_mctrl(struct uart_port *port, unsigned int mctrl);
 static unsigned int men_uart_get_mctrl(struct uart_port *port);
-#if LINUX_VERSION_CODE < Z025_SERIAL_DIFF
-static void men_uart_stop_tx(struct uart_port *port, unsigned int tty_stop);
-static void men_uart_start_tx(struct uart_port *port, unsigned int tty_start);
-#else
 static void men_uart_stop_tx(struct uart_port *port);
 static void men_uart_start_tx(struct uart_port *port);
-#endif
 
 static void men_uart_stop_rx(struct uart_port *port);
 static void men_uart_enable_ms(struct uart_port *port);
@@ -273,15 +259,9 @@ static void men_uart_break_ctl(struct uart_port *port, int break_state);
 static int men_uart_startup(struct uart_port *port);
 static void men_uart_shutdown(struct uart_port *port);
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,19)
-static void men_uart_set_termios(struct uart_port *port,
-								 struct termios *termios, 
-								 struct termios *old);
-#else
 static void men_uart_set_termios(struct uart_port *port,
 								 struct ktermios *termios, 
 								 struct ktermios *old);
-#endif
 
 static void men_uart_pm(struct uart_port *port, unsigned int state,
 						unsigned int oldstate);
@@ -639,15 +619,8 @@ static inline void men_uart_set_sleep(struct ox16c954_port *up, int sleep)
 static struct uart_driver men_uart_reg = {
 	.owner			= THIS_MODULE,
 	.driver_name	= "serM77",
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,15)
-	.devfs_name		= "tts/",  		/* obsolete from 2.6.15 on! */
-#endif
 	.dev_name		= UART_NAME_PREFIX,
-#ifdef CYCLADES_MAJOR
-	.major			= CYCLADES_MAJOR,
-#else
 	.major			= MEN_UART_MAJOR,
-#endif
 	.minor			= 0,
 	.nr				= MAX_SNGL_UARTS,
 	.cons			= NULL/* MEN_UART_CONSOLE */,
@@ -1030,11 +1003,7 @@ static inline void __stop_tx(struct ox16c954_port *p)
  *
  * \return 			-
  */
-#if LINUX_VERSION_CODE < Z025_SERIAL_DIFF
-static void men_uart_stop_tx(struct uart_port *port, unsigned int tty_stop)
-#else
 static void men_uart_stop_tx(struct uart_port *port)
-#endif
 {
 	struct ox16c954_port *up = (struct ox16c954_port *)port;
 
@@ -1060,12 +1029,7 @@ static void men_uart_stop_tx(struct uart_port *port)
  */
 static inline void transmit_chars(struct ox16c954_port *up)
 {
-
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,32)
-	struct circ_buf *xmit = &up->port.info->xmit;
-#else
 	struct circ_buf *xmit = &up->port.state->xmit;
-#endif
 
 	int count;
 
@@ -1077,11 +1041,7 @@ static inline void transmit_chars(struct ox16c954_port *up)
 	}
 
 	if (uart_tx_stopped(&up->port)) {
-#if LINUX_VERSION_CODE < Z025_SERIAL_DIFF
-		men_uart_stop_tx(&up->port, 0);
-#else
 		men_uart_stop_tx(&up->port);
-#endif
 		return;
 	}
 
@@ -1116,11 +1076,7 @@ static inline void transmit_chars(struct ox16c954_port *up)
  *
  * \return 			-
  */
-#if LINUX_VERSION_CODE < Z025_SERIAL_DIFF
-static void men_uart_start_tx(struct uart_port *port, unsigned int tty_start)
-#else
 static void men_uart_start_tx(struct uart_port *port)
-#endif
 {
 	struct ox16c954_port *up = (struct ox16c954_port *)port;
 
@@ -1193,14 +1149,7 @@ static void men_uart_enable_ms(struct uart_port *port)
 static inline void
 receive_chars(struct ox16c954_port *up, int *status, struct pt_regs *regs)
 {
-
-#if LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,27)
-	struct tty_struct *tty = up->port.info->tty;
-#elif LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,31)
-	struct tty_struct *tty = up->port.info->port.tty;
-#elif LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,32) 
 	struct tty_struct *tty = up->port.state->port.tty;
-#endif
 
 	unsigned char ch, lsr = *status;
 	int max_count = 256;
@@ -1248,11 +1197,7 @@ receive_chars(struct ox16c954_port *up, int *status, struct pt_regs *regs)
 				flag = TTY_FRAME;
 		}
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,19)
-		if (uart_handle_sysrq_char(&up->port, ch, regs))
-#else
 		if (uart_handle_sysrq_char(&up->port, ch))
-#endif
 			goto ignore_char;
 
 		uart_insert_char(&up->port, lsr, UART_LSR_OE, ch, flag);
@@ -1261,11 +1206,7 @@ receive_chars(struct ox16c954_port *up, int *status, struct pt_regs *regs)
 		lsr = serial_in(up, UART_LSR);
 	} while ((lsr & UART_LSR_DR) && (max_count-- > 0));
 	spin_unlock(&up->port.lock);
-#if LINUX_VERSION_CODE < KERNEL_VERSION(3,9,0)
-	tty_flip_buffer_push(tty);
-#else 
 	tty_flip_buffer_push(tty->port);
-#endif
 	spin_lock(&up->port.lock);
 	*status = lsr;
 }
@@ -1295,11 +1236,7 @@ static inline void check_modem_status(struct ox16c954_port *up)
 	if (status & UART_MSR_DCTS)
 		uart_handle_cts_change(&up->port, status & UART_MSR_CTS);
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,32)
-	wake_up_interruptible(&up->port.info->delta_msr_wait);
-#else
 	wake_up_interruptible(&up->port.state->port.delta_msr_wait);
-#endif
 }
 
 
@@ -1680,11 +1617,7 @@ static unsigned int men_uart_get_divisor(struct uart_port *port,
  *
  * \return 				-
  */
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,19)
-static void men_uart_set_termios(struct uart_port *port,struct termios *termios, struct termios *old)
-#else
 static void men_uart_set_termios(struct uart_port *port,struct ktermios *termios, struct ktermios *old)
-#endif
 {
 	unsigned char efr = 0;
 	struct ox16c954_port *up = (struct ox16c954_port *)port;
