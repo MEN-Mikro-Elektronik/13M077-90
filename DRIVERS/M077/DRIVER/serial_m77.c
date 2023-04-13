@@ -259,9 +259,15 @@ static void men_uart_break_ctl(struct uart_port *port, int break_state);
 static int men_uart_startup(struct uart_port *port);
 static void men_uart_shutdown(struct uart_port *port);
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
 static void men_uart_set_termios(struct uart_port *port,
-								 struct ktermios *termios, 
-								 struct ktermios *old);
+				 struct ktermios *termios,
+				 const struct ktermios *old);
+#else
+static void men_uart_set_termios(struct uart_port *port,
+				 struct ktermios *termios,
+				 struct ktermios *old);
+#endif
 
 static void men_uart_pm(struct uart_port *port, unsigned int state,
 						unsigned int oldstate);
@@ -631,20 +637,20 @@ static struct uart_driver men_uart_reg = {
 /** The HW-dependent port operations called by the core driver
  */
 static struct uart_ops men_uart_pops = {
-	.tx_empty		= men_uart_tx_empty,
-	.set_mctrl		= men_uart_set_mctrl,
-	.get_mctrl		= men_uart_get_mctrl,
-	.stop_tx		= men_uart_stop_tx,
-	.start_tx		= men_uart_start_tx,
-	.stop_rx		= men_uart_stop_rx,
-	.enable_ms		= men_uart_enable_ms,
-	.break_ctl		= men_uart_break_ctl,
-	.startup		= men_uart_startup,
-	.shutdown		= men_uart_shutdown,
+	.tx_empty	= men_uart_tx_empty,
+	.set_mctrl	= men_uart_set_mctrl,
+	.get_mctrl	= men_uart_get_mctrl,
+	.stop_tx	= men_uart_stop_tx,
+	.start_tx	= men_uart_start_tx,
+	.stop_rx	= men_uart_stop_rx,
+	.enable_ms	= men_uart_enable_ms,
+	.break_ctl	= men_uart_break_ctl,
+	.startup	= men_uart_startup,
+	.shutdown	= men_uart_shutdown,
 	.set_termios	= men_uart_set_termios,
-	.pm				= men_uart_pm,
-	.type			= men_uart_type,
-	.ioctl 			= men_uart_ioctl,
+	.pm		= men_uart_pm,
+	.type		= men_uart_type,
+	.ioctl 		= men_uart_ioctl,
 	.release_port	= men_uart_release_port,
 	.request_port	= men_uart_request_port,
 	.config_port	= men_uart_config_port,
@@ -1617,7 +1623,11 @@ static unsigned int men_uart_get_divisor(struct uart_port *port,
  *
  * \return 				-
  */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
+static void men_uart_set_termios(struct uart_port *port,struct ktermios *termios, const struct ktermios *old)
+#else
 static void men_uart_set_termios(struct uart_port *port,struct ktermios *termios, struct ktermios *old)
+#endif
 {
 	unsigned char efr = 0;
 	struct ox16c954_port *up = (struct ox16c954_port *)port;
